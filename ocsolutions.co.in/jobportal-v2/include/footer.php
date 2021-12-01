@@ -1,3 +1,17 @@
+<script>
+// JavaScript for label effects only
+$(window).load(function(){	
+	$(".input-effect input").focusout(function(){
+		if($(this).val() != ""){
+			$(this).addClass("has-content");
+		}else{
+			$(this).removeClass("has-content");
+		}
+	})
+});
+</script>
+
+
 <!-- Footer4 start here -->
 <link href="../../cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <!-- static code start here -->
@@ -99,10 +113,10 @@ USA, MD 210093</a>
 						<a href="http://www.youtube.com/" target="new"><i class="fa fa-youtube" aria-hidden="true"></i></a>
 					  </li>
 					  					  
-					  					  <li class="hide">
+					  					  <li>
 						<a href="http://www.google.com/" target="new"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
 					  </li>
-					  					  					  <li class="hide">
+					  					  					  <li>
 						<a href="http://www.linkedin.com/" target="new"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 					  </li>
 									</ul>
@@ -111,3 +125,63 @@ USA, MD 210093</a>
 	</div>
 </footer>
 <!-- Footer4 end here -->
+
+<div class="powered">
+	<div class="container">
+		<p>Powered By <a href="http://themultimediadesigner.com/">TMD</a>Jobportal &copy; 2021</p>
+	</div>
+</div>
+<!-- powered end here -->
+</body>
+<!-- Mirrored from ocsolutions.co.in/jobportal-v2/index.php?route=employ/register by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Oct 2021 19:16:16 GMT -->
+</html>
+<div id="quick_link" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<script>
+$('body').prepend('<a href="#" class="bottom-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>');
+var amountScrolled = 300;
+$(window).on('scroll',function() {
+	if ( $(window).scrollTop() > amountScrolled ) {
+		$('a.bottom-top').fadeIn('slow');
+	} else {
+		$('a.bottom-top').fadeOut('slow');
+	}
+});
+$('a.bottom-top').on('click',function() {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 700);
+	return false;
+});
+</script>
+
+<script>
+$('#buttonemail').click(function(){
+	$.ajax({
+		url: 'index.php?route=common/footer/emailfunction',
+		type: 'post',
+		data: $('.touchcandidateemail input,touchcandidateemail textarea'),
+		dataType: 'json',
+		beforeSend: function() {
+		},
+		success: function(json) {
+			
+
+			if (json['success']) {
+				var text_success_msg = '<div class="p-3 mb-2 bg-success text-white"></div>';
+				$('.touchcandidateemailemail').html(text_success_msg+json['success']);
+				$('.messageclass').val('');
+				$('.emailclass').val('');
+				$('.nameclass').val('');
+
+				
+			}
+		}
+	});
+});
+
+$(document).on('click','.quicklink',function(e) {
+	$('#quick_link .modal-content').html('<div class="loader-if centered"></div>');
+	$('#quick_link').load($(this).attr('href'));
+});
+</script>

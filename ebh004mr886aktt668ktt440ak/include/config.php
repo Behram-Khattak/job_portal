@@ -17,13 +17,6 @@
                 }
                 return $this->conn;
     }
-
-    
-    public function showmessage($type,$message){
-    return  '<div class= "alert alert-'.$type.'alert-dismissible">
-    <button type= "button" class=" close" data dissmiss="alert">&times</button>
-    <strong class="text-center">'.$message.'</strong> </div>';
-    }
     }
 
 ?>

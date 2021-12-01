@@ -34,6 +34,34 @@ class auth extends database{
         $stmt->execute();
     }
 
+    public function update_Admin_profile($adminId, $fName, $location, $phone, $profession, $website, $Fb, $Tw, $Ln, $Git, $fileName)
+    {
+        $sql = "UPDATE job_portal_admin SET image=:fileName, fname=:fName, location=:location, phone=:phone, profession=:profession, web_link=:website, facebook=:Fb, twitter=:Tw, linkedin=:Ln, github=:Git where id=:adminId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':fName', $fName ,PDO::PARAM_STR);
+        $stmt->bindParam(':location', $location ,PDO::PARAM_STR);
+        $stmt->bindParam(':phone', $phone ,PDO::PARAM_STR);
+        $stmt->bindParam(':profession', $profession ,PDO::PARAM_STR);
+        $stmt->bindParam(':website', $website ,PDO::PARAM_STR);
+        $stmt->bindParam(':Fb', $Fb ,PDO::PARAM_STR);
+        $stmt->bindParam(':Tw', $Tw ,PDO::PARAM_STR);
+        $stmt->bindParam(':Ln', $Ln ,PDO::PARAM_STR);
+        $stmt->bindParam(':Git', $Git ,PDO::PARAM_STR);
+        $stmt->bindParam(':fileName', $fileName ,PDO::PARAM_STR);
+        $stmt->bindParam(':adminId', $adminId ,PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+    public function fetch_Profile_data($adminId)
+    {
+        $sql = "SELECT * from job_portal_admin where id = :adminId";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':adminId', $adminId ,PDO::PARAM_STR);
+        $stmt->execute();
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     // validates the provided value against xss attacks.
     public function test_input($data)
     {

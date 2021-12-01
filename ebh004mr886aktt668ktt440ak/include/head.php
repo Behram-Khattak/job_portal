@@ -23,6 +23,8 @@ include "session.php";
 
     <!--  BEGIN CUSTOM STYLE FILE  -->
     <link href="assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="plugins/dropify/dropify.min.css">
+    <link href="assets/css/users/account-setting.css" rel="stylesheet" type="text/css" />
     <!--  END CUSTOM STYLE FILE  -->
 
 </head>

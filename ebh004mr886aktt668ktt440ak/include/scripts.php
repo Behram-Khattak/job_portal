@@ -12,7 +12,10 @@
     <script src="assets/js/custom.js"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
     <script src="plugins/apex/apexcharts.min.js"></script>
     <script src="assets/js/dashboard/dash_1.js"></script>
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="plugins/dropify/dropify.min.js"></script>
+    <script src="plugins/blockui/jquery.blockUI.min.js"></script>
+    <script src="assets/js/users/account-settings.js"></script>
+    <!--  END CUSTOM SCRIPTS FILE  -->
