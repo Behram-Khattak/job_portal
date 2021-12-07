@@ -1,2 +1,2 @@
 # job_portal
-A job portal site that lookouts the job suitable for you
+A job portal site that looksout the job suitable for you
